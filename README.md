@@ -54,5 +54,4 @@ set -g status-right '#[fg=colour226,bg=colour017,bright]#{@active_wg_ifs}#[fg=gr
 
 Will look something like this:
 
-![image](https://github.com/user-attachments/assets/3923eb58-eb61-4720-8f90-340148aed427)
-
+<img src="https://github.com/user-attachments/assets/3923eb58-eb61-4720-8f90-340148aed427" width="150" />
