@@ -46,8 +46,13 @@ This plugin adds the following variables for use in your `status-left` or
 
   - `#{@active_wg_ifs}` :: Space-separated list of WireGuard interface names
 
-Example:
+### Example
 
 ```
 set -g status-right '#[fg=colour226,bg=colour017,bright]#{@active_wg_ifs}#[fg=green,bg=black,nobright] #[default]'
 ```
+
+Will look something like this:
+
+![image](https://github.com/user-attachments/assets/3923eb58-eb61-4720-8f90-340148aed427)
+
