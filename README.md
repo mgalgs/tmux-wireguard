@@ -2,10 +2,6 @@
 
 tmux plugin to add active WireGuard interfaces to your status bar.
 
-## Pre-requisites
-
-- `ip` (from `iproute2`)
-
 ## Installation
 
 ### Via TPM (recommended)
