@@ -28,7 +28,7 @@ if [[ "$1" == "verbose" ]]; then
             latest_handshake="-"
         fi
 
-        output+="$if(↑$tx|↓$rx|$latest_handshake) "
+        output+="$if(↓$rx|↑$tx|$latest_handshake) "
     done
     echo "<${output% }>"
 else
