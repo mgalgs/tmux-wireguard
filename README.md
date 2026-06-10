@@ -1,13 +1,18 @@
 # tmux WireGuard status
 
-tmux plugin to add active WireGuard interfaces to your status bar.
+tmux plugin to add active WireGuard (and Tailscale) interfaces to your status bar.
+
+Tailscale is detected automatically: when it's connected, its interface shows up
+alongside your regular WireGuard interfaces.
 
 ## Pre-requisites
 
 - `wg` (from `wireguard-tools`)
 - `numfmt` (from `coreutils`)
+- `jq` (for Tailscale stats in verbose mode)
 - For verbose mode (to show network transfer, etc), the ability to run `sudo wg show`
-  without a password (example sudoers config below)
+  without a password (example sudoers config below). Tailscale stats don't need
+  sudo.
 
 ## Installation
 
@@ -51,6 +56,9 @@ This plugin adds the following variables for use in your `status-left` or
   - `#{@active_wg_ifs}` :: Space-separated list of WireGuard interface names
   - `#{@active_wg_ifs_verbose}` :: Verbose list of interfaces, including data
     transfer (summed across all peers) and last handshake (from most recent peer)
+
+When Tailscale is connected, its interface (normally `tailscale0`) is included in
+both variables, with the same verbose stats pulled from `tailscale status`.
 
 ### Example
 
