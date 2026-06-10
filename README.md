@@ -80,11 +80,15 @@ password you can add the following entry to your sudoers file (which you can edi
 running `sudo visudo`):
 
 ```
-%sudo ALL=(ALL) NOPASSWD: /usr/bin/wg show
+%sudo ALL=(ALL) NOPASSWD: /usr/bin/wg show *
 ```
 
 (replace `%sudo` with `username` to target a specific user, or `%othergroup` to
 target a different group).
+
+Note the trailing `*` — it's required because sudoers matches command arguments
+exactly, and this plugin runs commands like `wg show wg0 transfer`. A rule for just
+`/usr/bin/wg show` would only allow `wg show` with no arguments.
 
 To keep things organized and separate from your distro's sudo configuration you can
 drop that in a dedicated file by running `sudo visudo -f /etc/sudoers.d/wg` and
